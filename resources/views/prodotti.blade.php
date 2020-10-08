@@ -124,7 +124,23 @@ $data = '[
 
 // trasformo in array con json_decode
 $cards = json_decode($data, true);
-dd($cards);
+$lunghe = [];
+$corte = [];
+$cortissime = [];
+
+foreach ($cards as $card){
+    if($card['tipo'] == "lunga"){
+        $lunghe[] = $card;
+    } elseif ($card['tipo'] == "corta"){
+        $corte[] = $card;
+    } elseif ($card['tipo'] == "cortissima") {
+        $cortissime[] = $card;
+    }
+}
+
+// dd($lunghe, $corte, $cortissime);
+
+// dd($cards);
 @endphp
 <!DOCTYPE html>
 <html lang="en">
@@ -147,6 +163,33 @@ dd($cards);
             </nav>
         </header>
         <main>
+            <div class="cards">
+                <h2>Le Lunghe</h2>
+                @foreach ($lunghe as $card)
+                    <div class="card">
+                        <h3>{{ $card['titolo'] }}</h3>
+                        <img src="{{ $card['src'] }}" alt="{{ $card['titolo'] }}">
+                    </div>
+                @endforeach
+            </div>
+            <div class="cards">
+                <h2>Le Corte</h2>
+                @foreach ($corte as $card)
+                    <div class="card">
+                        <h3>{{ $card['titolo'] }}</h3>
+                        <img src="{{ $card['src'] }}" alt="{{ $card['titolo'] }}">
+                    </div>
+                @endforeach
+            </div>
+            <div class="cards">
+                <h2>Le Cortissime</h2>
+                @foreach ($cortissime as $card)
+                    <div class="card">
+                        <h3>{{ $card['titolo'] }}</h3>
+                        <img src="{{ $card['src'] }}" alt="{{ $card['titolo'] }}">
+                    </div>
+                @endforeach
+            </div>
 
         </main>
 
