@@ -153,7 +153,9 @@ foreach ($cards as $card){
     </head>
     <body>
         <header>
-            <img src="https://cdn.shortpixel.ai/client/q_lossy,ret_img,w_250,h_145/https://www.lamolisana.it/wp-content/uploads/2020/05/marchio-sito-test.png" alt="Logo_la_molisana">
+            <div class="logo">
+                <img src="https://cdn.shortpixel.ai/client/q_lossy,ret_img,w_250,h_145/https://www.lamolisana.it/wp-content/uploads/2020/05/marchio-sito-test.png" alt="Logo_la_molisana">
+            </div>
             <nav>
                 <ul>
                     <li> <a href="{{ route('home') }}">Home</a></li>
@@ -163,29 +165,30 @@ foreach ($cards as $card){
             </nav>
         </header>
         <main>
+            <h2>Le Lunghe</h2>
             <div class="cards">
-                <h2>Le Lunghe</h2>
                 @foreach ($lunghe as $card)
+
                     <div class="card">
-                        <h3>{{ $card['titolo'] }}</h3>
+                        {{-- <h3>{{ $card['titolo'] }}</h3> --}}
                         <img src="{{ $card['src'] }}" alt="{{ $card['titolo'] }}">
                     </div>
                 @endforeach
             </div>
+            <h2>Le Corte</h2>
             <div class="cards">
-                <h2>Le Corte</h2>
                 @foreach ($corte as $card)
                     <div class="card">
-                        <h3>{{ $card['titolo'] }}</h3>
+                        {{-- <h3>{{ $card['titolo'] }}</h3> --}}
                         <img src="{{ $card['src'] }}" alt="{{ $card['titolo'] }}">
                     </div>
                 @endforeach
             </div>
+            <h2>Le Cortissime</h2>
             <div class="cards">
-                <h2>Le Cortissime</h2>
                 @foreach ($cortissime as $card)
                     <div class="card">
-                        <h3>{{ $card['titolo'] }}</h3>
+                        {{-- <h3>{{ $card['titolo'] }}</h3> --}}
                         <img src="{{ $card['src'] }}" alt="{{ $card['titolo'] }}">
                     </div>
                 @endforeach

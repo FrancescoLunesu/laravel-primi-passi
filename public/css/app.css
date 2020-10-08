@@ -4,7 +4,53 @@
   box-sizing: border-box;
 }
 
+header .logo,
+header nav {
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+header nav ul li {
+  padding: 10px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #000;
+}
+
+main h2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+main .cards {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+main .cards .card {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
 main .cards .card img {
-  width: 300px;
+  width: 100%;
 }
 
